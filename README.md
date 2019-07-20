@@ -1,3 +1,3 @@
-# elasticsearch
-# Docker container contain elasticsearch only.
-# copy file and paste and start your docker container. 
+elasticsearch
+Docker container contain elasticsearch only.
+Clone this file and you can start docker container. 
