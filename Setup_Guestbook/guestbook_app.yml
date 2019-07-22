@@ -158,7 +158,7 @@ metadata:
   namespace: prod
 spec:
   rules:
-  - host: vm
+  - host: guestbook.kunalvm.io
     http:
       paths:
       - backend:
