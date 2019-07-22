@@ -1,0 +1,3 @@
+- import_playbook: k8s_install_pkgs.yml
+- import_playbook: k8s_master.yml
+- import_playbook: k8s_workers.yml
