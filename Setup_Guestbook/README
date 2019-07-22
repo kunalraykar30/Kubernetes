@@ -1,9 +1,14 @@
-guesbook.yml
-
 These yml files are created keeping in mind the Kubernetes guestbook app. 
+
+guestbook.yml
+
+Playbook - guestbook.yml is the actual playbook that will start the contianers and spun off the services of the guesbook app.
 The obejective to create all the services deployment file of Guestbook app the prod namespace.
 Single yml file consist of all the plays required to create redis-master/redis-slave deployment, redis-master/redis-slave service. 
+To keep things simple I have added all plays in the single yml, but if you want to can divide the plays.
 Along with the ingress resource that will be used by the ingress controller for sending the traffic to the host.
 
 I have used here host based rules you can also used path based rules for the same purpose. 
+
+guestbook
 
