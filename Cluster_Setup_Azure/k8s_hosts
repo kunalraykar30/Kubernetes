@@ -1,0 +1,14 @@
+[all]
+
+[master]
+52.224.52.109   ansible_user=kunaluser
+
+[workers]
+52.224.54.92    ansible_user=kunaluser
+
+[all:vars]
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
+[all:children]
+master
+workers
