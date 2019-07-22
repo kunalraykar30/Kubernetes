@@ -1,0 +1,30 @@
+- hosts: master
+  become: yes
+  gather_facts: false
+
+  tasks:
+    - name: get join command
+      shell: kubeadm token create --print-join-command > /tmp/join.txt
+      register: join_out
+
+
+    - name: get join command to destination
+      fetch:
+        src: /tmp/join.txt
+        dest: /tmp/join.txt
+        flat: yes
+
+- hosts: workers
+  become: true
+  gather_facts: false
+
+  tasks:
+
+    - name: Copy join command
+      copy:
+         src: /tmp/join.txt
+         dest: /tmp/join-command.sh
+         mode: 0777
+
+    - name: Join the node to cluster
+      command: sh /tmp/join-command.sh
