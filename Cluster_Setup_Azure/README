@@ -1,3 +1,5 @@
+Here, I have used kubeadm for the k8s cluster setup. All the yml files are written taken into considertion that you are running Ubuntu.
+
 k8s_allsetup.yml
 
 This yml file imports all the playbooks that are required to setup the cluster on the Azure VM.
