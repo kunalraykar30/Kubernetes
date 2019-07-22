@@ -10,5 +10,10 @@ Along with the ingress resource that will be used by the ingress controller for 
 
 I have used here host based rules you can also used path based rules for the same purpose. 
 
-guestbook
+====================================
+====================================
+guestbook_hpa.yml
+
+Playbook - guesbook_hpa.yml is written to implement the AutoPodScaling policy based on the CPU percent utilization.
+Here, the fronend pods of the guestbook app will be scaled in/out as per the CPU usage. (Min - 2 to Max -10)
 
