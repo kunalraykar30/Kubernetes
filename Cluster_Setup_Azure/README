@@ -1,0 +1,25 @@
+k8s_allsetup.yml
+
+This yml file imports all the playbooks that are required to setup the cluster on the Azure VM.
+Playbooks are executed in sequential way - starting with k8s_installpkgs.yml then k8s_master.yml and then k8s_worker.yml
+If you are not using this file you need to execute playbooks manually. 
+
+Command to be executed:
+kunal@Azure:~/Azure/Kubernetes$ ansible-playbook k8s_allsetup.yml -i k8s_hosts
+
+k8s_installpkgs.yml
+Install all the necessary pkgs required to install and setup the kubernetes cluster. 
+It setups the repo for pkgs and install the docker.io/kubeadm/kubelet/kubectl and all necessary pkgs on master as well on worker nodes. 
+kunal@Azure:~/Azure/Kubernetes$ ansible-playbook k8s_install_pkgs.yml -i k8s_hosts
+
+k8s_master.yml
+Playbook is written for master node to initailize the cluster. 
+kunal@Azure:~/Azure/Kubernetes$ ansible-playbook k8s_master.yml -i k8s_hosts
+
+k8s_worker.yml
+This playbook is written so worker node can join cluster.
+kunal@Azure:~/Azure/Kubernetes$ ansible-playbook  k8s_worker.yml -i k8s_hosts
+
+NOTE: Before you run the playbook, hosts file - k8s_hosts is updated correctly with IP address of the Azure VMs that will act as master and workers.
+Also, the playbooks are designed taking into consideration that you will be using the Ubuntu as base OS for all the K8s nodes. 
+I have executed all of the command from my Azure Cloud Shell same is expected from you while running the Ansible playbook.
