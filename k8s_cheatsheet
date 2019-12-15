@@ -1,0 +1,6 @@
+#Kubernetes Cheat Sheet - By Kunal Raykar
+
+Deployment
+# kubectl get deploy
+# kubectl get deploy -o wide
+# kubectl create -f nginx-deploy.yaml 
