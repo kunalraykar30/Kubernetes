@@ -1,6 +1,47 @@
 # Kubernetes Cheat Sheet - By Kunal Raykar
 
-Deployment
+########## Nodes Commands ##########
+# kubectl get nodes 
+# kubectl get no -o wide 
+
+########## Pods Commands ##########
+# kubectl get pods 
+# kubectl get pods -o wide
+# kubectl get pods -n mynamespace 
+# kubectl create -f mypod.yaml 
+# kubectl describe pod mypod
+
+# kubectl run --generator=run-pod/v1 mypod --image=redis                            => Create pod from command line without yaml file
+# kubectl run --generator=run-pod/v1 mypod100 --image=nginx --port=2379 --dry-run   => Dry-run of pod creation with specfic spec
+
+# kubectl delete pod/mypod                            => Delte pods of mypods 
+# kubectl delete pods -l name=my-app                  => Delete pods where label - name=my-app
+
+########## ReplicaSet Commands ##########
+# kubectl get rs 
+# kubectl get rs -o wide 
+# kubectl create -f myreplica-set.yaml 
+# kubectl describe rs myreplica-set
+
+# kubectl scale --replicas=5 rs/myreplica-set          => Scale up Replicas in Deployment 
+# kubectl scale --replicas=2 rs/myreplica-set          => Scale down Replicas in Deployment 
+
+# kubectl delete rs/myreplica-set                      => Delte ReplicaSet and the pods associated with ReplicaSet
+
+########## Deployment Commands ##########
 # kubectl get deploy
 # kubectl get deploy -o wide
-# kubectl create -f nginx-deploy.yaml 
+# kubectl create -f mynginx-deploy.yaml 
+# kubectl describe deploy mynginx-deploy 
+
+# kubectl scale --replicas=5 deploy/mynginx-deploy      => Scale up Replicas in Deployment 
+# kubectl scale --replicas=2 deploy/mynginx-deploy      => Scale down Replicas in Deployment 
+
+# kubectl delete deploy/mynginx-deploy                  => Delte Deployment and all rs and pods of the deployment 
+
+# kubectl get all                 => Shows all object in the namespace 
+# kubectl get events              => Shows all events of Objects 
+
+########## Namespace Commands ##########
+# kubectl get namespace 
+
