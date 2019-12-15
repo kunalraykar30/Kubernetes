@@ -1,4 +1,4 @@
-#Kubernetes Cheat Sheet - By Kunal Raykar
+# Kubernetes Cheat Sheet - By Kunal Raykar
 
 Deployment
 # kubectl get deploy
