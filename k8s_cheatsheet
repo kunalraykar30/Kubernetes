@@ -13,6 +13,7 @@
 # kubectl create -f mypod.yaml 
 # kubectl describe pod mypod
 
+# kubectl get pod my-pod -o yaml                                    => Get a pod's YAML
 # kubectl get pod etcd-master -o yaml -n kube-system                => Generate yaml output of etcd-master pod of kube-system ns
 
 # kubectl run --generator=run-pod/v1 mypod --image=redis                            => Create pod from command line without yaml file
@@ -36,8 +37,12 @@
 ########## Deployment Commands ##########
 # kubectl get deploy
 # kubectl get deploy -o wide
+# kubectl get deploy mydeploy -o yaml                  => Get a deployment's YAML output on screen
 # kubectl create -f mynginx-deploy.yaml 
 # kubectl describe deploy mynginx-deploy 
+
+# kubectl create deploy mydeploy --image=nginx                      => Creating deployment using command line 
+# Kubectl create deploy mydeploy --image=nginx --dry-run -o yaml    => Running dry-run of deploy and get yaml output on screen
 
 # kubectl scale --replicas=5 deploy/mynginx-deploy      => Scale up Replicas in Deployment 
 # kubectl scale --replicas=2 deploy/mynginx-deploy      => Scale down Replicas in Deployment 
@@ -54,3 +59,10 @@
 
 # kubectl delete namespace mydev
 
+########## Service Commands ##########
+# kubectl get svc 
+# kubectl get svc -o wide 
+
+# kubectl create -f mysvc.yaml 
+# kubectl describe mysvc 
+# kubectl expose deploy mydeploy --port=3300 --name=mysvc -o yaml    => Creates svc using command line for deploy and get yaml output
