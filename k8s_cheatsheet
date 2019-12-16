@@ -8,11 +8,16 @@
 # kubectl get pods 
 # kubectl get pods -o wide
 # kubectl get pods -n mynamespace 
+# kubectl get pods --all-namespaces
+
 # kubectl create -f mypod.yaml 
 # kubectl describe pod mypod
 
+# kubectl get pod etcd-master -o yaml -n kube-system                => Generate yaml output of etcd-master pod of kube-system ns
+
 # kubectl run --generator=run-pod/v1 mypod --image=redis                            => Create pod from command line without yaml file
 # kubectl run --generator=run-pod/v1 mypod100 --image=nginx --port=2379 --dry-run   => Dry-run of pod creation with specfic spec
+# kubectl run --generator=run-pod/v1 mypod200 --image=nginx --namespace=mydev       => Run pod in specific namespace
 
 # kubectl delete pod/mypod                            => Delte pods of mypods 
 # kubectl delete pods -l name=my-app                  => Delete pods where label - name=my-app
@@ -44,4 +49,8 @@
 
 ########## Namespace Commands ##########
 # kubectl get namespace 
+# kubectl create namespace mydev 
+# kubectl describe namespace mydev 
+
+# kubectl delete namespace mydev
 
