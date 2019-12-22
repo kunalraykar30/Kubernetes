@@ -13,6 +13,8 @@
 # kubectl create -f mypod.yaml 
 # kubectl describe pod mypod
 
+# kubectl exec -it mypod -- /bin/bash            => Login into container using shell
+
 # kubectl get pod my-pod -o yaml                                    => Get a pod's YAML
 # kubectl get pod etcd-master -o yaml -n kube-system                => Generate yaml output of etcd-master pod of kube-system ns
 
