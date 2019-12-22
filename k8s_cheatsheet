@@ -54,8 +54,11 @@
 
 ########## Namespace Commands ##########
 # kubectl get namespace 
-# kubectl create namespace mydev 
-# kubectl describe namespace mydev 
+# kubectl create namespace mydev-ns
+# kubectl describe namespace mydev-ns
+
+# kubectl config set-context --current --namespace=mydev-ns      => Switch to mydev-ns
+# Kubectl config view                                            => Check if the ns is switched
 
 # kubectl delete namespace mydev
 
