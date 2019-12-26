@@ -44,6 +44,13 @@
 
 # kubectl delete rs/myreplica-set                      => Delte ReplicaSet and the pods associated with ReplicaSet
 
+########## DaemonSets Commands ##########
+# kubectl get ds 
+# kubectl get ds --all-namespaces
+# kubectl get ds -o wide -n kube-system 
+
+# kubectl describe ds kube-proxy -n kube-system       => Describe kube-proxy in ns - kube-system 
+
 ########## Deployment Commands ##########
 # kubectl get deploy
 # kubectl get deploy -o wide
