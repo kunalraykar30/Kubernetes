@@ -12,6 +12,17 @@
 # kubectl get nodes -l largekey=largevalue           => Show nodes with key largekey
 # kubectl get nodes --show-labels                    => Show all labels of nodes
 
+########## Monitoring and Logging Commands ##########
+
+# kubectl top nodes
+# kubectl top pods 
+# Kubectl top pods --all-namespaces 
+
+# kubectl logs nginx-pod
+# kubectl logs nginx-pod -c nginx-container       => Provide -c option when pod contain more than one container
+# kubectl logs --since=1h nginx-pod 
+# kubectl logs --tail=20 nginx-pod 
+
 ########## Pods Commands ##########
 # kubectl get pods 
 # kubectl get pods -o wide
