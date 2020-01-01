@@ -8,9 +8,10 @@
 # kubectl taint nodes node01 appkey=bluevalue:NoExexute -o yaml  => Pushing node config in yaml so same code can be used in pod yaml for tolerations
 # kubectl taint nodes node01 appkey=NoSchedule-                  => Remove taint from node
 
+# kubectl get nodes --show-labels                    => Show all labels of nodes
 # kubectl label nodes node01 largekey=largevalue     => Label should be key=value format
 # kubectl get nodes -l largekey=largevalue           => Show nodes with key largekey
-# kubectl get nodes --show-labels                    => Show all labels of nodes
+# kubectl label nodes node01 largekey-               => Delete labels from the nodes
 
 ########## Monitoring and Logging Commands ##########
 
