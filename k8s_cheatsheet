@@ -107,6 +107,16 @@
 ########## Configmap Commands ##########
 # kubectl get configmap 
 # kubectl create configmap nginx-configmap
+# kubectl describe configmap nginx-configmap 
 # kubectl create configmap nginx-configmap --dry-run -o yaml > nginx-confimap.yaml 
+# kubectl create configmap nginx-configmap --from-literal=NAME=Kunal 
 # kubectl delete configmap nginx-configmap 
+
+########## Secrets Commands ##########
+# kubectl get secrets 
+# kubectl create secrets generic nginx-secrets 
+# kubectl describe secrets nginx-secrets
+# kubectl create secrets generic nginx-secrets --from-literal=USER=root --from-literal=PASSWD=pass123 
+# kubectl delete secrets nginx-secret 
+
 
