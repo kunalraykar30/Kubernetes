@@ -119,4 +119,6 @@
 # kubectl create secrets generic nginx-secrets --from-literal=USER=root --from-literal=PASSWD=pass123 
 # kubectl delete secrets nginx-secret 
 
+# echo NAME | base64                    => Command base64 will encode string 
+# echo aw34huty | base64 --decode       => Command base64 with decode will decode the string
 
