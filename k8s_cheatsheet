@@ -107,5 +107,6 @@
 ########## Configmap Commands ##########
 # kubectl get configmap 
 # kubectl create configmap nginx-configmap
+# kubectl create configmap nginx-configmap --dry-run -o yaml > nginx-confimap.yaml 
 # kubectl delete configmap nginx-configmap 
 
