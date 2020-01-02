@@ -113,11 +113,11 @@
 # kubectl delete configmap nginx-configmap 
 
 ########## Secrets Commands ##########
-# kubectl get secrets 
-# kubectl create secrets generic nginx-secrets 
-# kubectl describe secrets nginx-secrets
-# kubectl create secrets generic nginx-secrets --from-literal=USER=root --from-literal=PASSWD=pass123 
-# kubectl delete secrets nginx-secret 
+# kubectl get secret
+# kubectl create secret generic nginx-secrets 
+# kubectl describe secret nginx-secrets
+# kubectl create secret generic nginx-secrets --from-literal=USER=root --from-literal=PASSWD=pass123 
+# kubectl delete secret nginx-secret 
 
 # echo NAME | base64                    => Command base64 will encode string 
 # echo aw34huty | base64 --decode       => Command base64 with decode will decode the string
