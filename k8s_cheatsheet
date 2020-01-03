@@ -4,6 +4,11 @@
 # kubectl get nodes 
 # kubectl get no -o wide 
 
+# kubectl drain node01 --ignore-daemonsets            => Evict all pods from node01 and marks it un-schedulable 
+# kubectl drain node01 --ignore-daemonsets --force    => Use --force if you need evict pods that are not under replicaset 
+# kubectl cordon node01                               => Make node un-schedulable for pods. Drain commands does cordon 
+# kubectl uncordon node01                             => Make node schedulable for pods  
+
 # kubectl taint nodes node01 appkey=bluevalue:NoSchedule         => Taint node with Values- key=value:effect (NoSchedule|PreferNoSchedule|NoExecute)
 # kubectl taint nodes node01 appkey=bluevalue:NoExexute -o yaml  => Pushing node config in yaml so same code can be used in pod yaml for tolerations
 # kubectl taint nodes node01 appkey=NoSchedule-                  => Remove taint from node
