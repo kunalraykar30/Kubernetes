@@ -127,3 +127,29 @@
 # echo NAME | base64                    => Command base64 will encode string 
 # echo aw34huty | base64 --decode       => Command base64 with decode will decode the string
 
+########## Cluster Upgrade ##########
+
+# kubeadm version 
+# kubeadm upgrade plan 
+
+On Master 
+# kubectl drain master --ignore-daemonsets 
+# apt install -y kubeadm=1.12.0-00
+# kubeadm upgrade apply v1.12.0
+# apt install kubelet=1.12.0-00 
+# systemctl restart kubelet 
+# kubectl uncordon master 
+
+On Node
+# kubectl drain node01 --ignore-daemonsets 
+# apt install kubeadm=1.12.0-00
+
+# ssh node01 
+# apt install kubelet=1.12.0-00
+# systemctl restart kubelet 
+# kubeadm upgrade node config --kubelet-version v1.12.0 
+# kubectl uncordon node01 
+
+# kubectl cluster-info 
+# kubectl cluster-info dump > cluster-info.dump 	=> Dump all info of cluster in file 
+
