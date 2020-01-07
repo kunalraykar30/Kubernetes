@@ -114,7 +114,7 @@
 # kubectl create configmap nginx-configmap
 # kubectl describe configmap nginx-configmap 
 # kubectl create configmap nginx-configmap --dry-run -o yaml > nginx-confimap.yaml 
-# kubectl create configmap nginx-configmap --from-literal=NAME=Kunal 
+# kubectl create configmap nginx-configmap --from-literal=NAME=Kunal --from-literal=ZONE=EU
 # kubectl delete configmap nginx-configmap 
 
 ########## Secrets Commands ##########
@@ -126,6 +126,11 @@
 
 # echo NAME | base64                    => Command base64 will encode string 
 # echo aw34huty | base64 --decode       => Command base64 with decode will decode the string
+
+########## Etcd Backup and restore ##########
+
+Backup and Restore procedure of etcd database 
+https://github.com/mmumshad/kubernetes-the-hard-way/blob/master/practice-questions-answers/cluster-maintenance/backup-etcd/etcd-backup-and-restore.md
 
 ########## Cluster Upgrade ##########
 
