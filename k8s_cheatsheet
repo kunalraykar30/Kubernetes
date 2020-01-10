@@ -50,14 +50,6 @@
 # kubectl delete pod/mypod                            => Delte pods of mypods 
 # kubectl delete pods -l name=my-app                  => Delete pods where label - name=my-app
 
-# kubectl create -f nginx-deploy.yaml --record 		=> Record options records the commands fired as part of rollout procedure
-# kubectl edit deploy nginx-deploy 					      => Edit the deployment and make changes 
-# kubectl rollout status deploy nginx-deploy 		  => Check the status of deployment. Changes that were performed 
-# kubectl rollout pause deploy nginx-deploy 		  => Pause the deployment in between in onging process
-# kubectl rollout resume deploy nginx-deploy 		  => Resume the deployment that was paused
-
-# kubectl rollout undo deploy nginx-deploy 			  => Undo the deployment 
-
 ########## ReplicaSet Commands ##########
 # kubectl get rs 
 # kubectl get rs -o wide 
@@ -90,6 +82,15 @@
 # kubectl scale --replicas=2 deploy/mynginx-deploy      => Scale down Replicas in Deployment 
 
 # kubectl delete deploy/mynginx-deploy                  => Delte Deployment and all rs and pods of the deployment 
+
+Rolling Update in Deployment 
+# kubectl create -f nginx-deploy.yaml --record 		=> Record options records the commands fired as part of rollout procedure
+# kubectl edit deploy nginx-deploy 					      => Edit the deployment and make changes 
+# kubectl rollout status deploy nginx-deploy 		  => Check the status of deployment. Changes that were performed 
+# kubectl rollout pause deploy nginx-deploy 		  => Pause the deployment in between in onging process
+# kubectl rollout resume deploy nginx-deploy 		  => Resume the deployment that was paused
+
+# kubectl rollout undo deploy nginx-deploy 			  => Undo the deployment 
 
 # kubectl get all                 => Shows all object in the namespace 
 # kubectl get events              => Shows all events of Objects 
