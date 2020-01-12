@@ -131,7 +131,31 @@ Rolling Update in Deployment
 ########## Etcd Backup and restore ##########
 
 Backup and Restore procedure of etcd database 
+
 https://github.com/mmumshad/kubernetes-the-hard-way/blob/master/practice-questions-answers/cluster-maintenance/backup-etcd/etcd-backup-and-restore.md
+
+BACKUP of the ectd server 
+
+ETCDCTL_API=3 etcdctl \
+--endpoints=https://[127.0.0.1]:2379 \
+--cacert=/etc/kubernetes/pki/etcd/ca.crt \
+--cert=/etc/kubernetes/pki/etcd/server.crt \
+--key=/etc/kubernetes/pki/etcd/server.key \
+snapshot save /tmp/snapshot-pre-boot.db
+
+RESTORE from the backup taken 
+
+ETCDCTL_API=3 etcdctl \
+--endpoints=https://[127.0.0.1]:2379 \
+--cacert=/etc/kubernetes/pki/etcd/ca.crt \
+--cert=/etc/kubernetes/pki/etcd/server.crt \
+--key=/etc/kubernetes/pki/etcd/server.key \
+--name=master \
+--data-dir /var/lib/etcd-from-backup \
+--initial-cluster=master=https://127.0.0.1:2380 \
+--initial-advertise-peer-urls=https://127.0.0.1:2380 \
+--initial-cluster-token etcd-cluster-1 \
+snapshot restore /tmp/snapshot-pre-boot.db
 
 ########## Cluster Upgrade ##########
 
