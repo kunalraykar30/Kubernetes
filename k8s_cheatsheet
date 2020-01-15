@@ -132,13 +132,6 @@ Rolling Update in Deployment
 # openssl genrsa -out kunal.key 4096                                => Generate the key for Kunal user
 # openssl req -new -key /root/kunal.key -out /root/kunal.csr        => Generate CSR for kunal.key 
 
-
-# kubectl get csr                       => Get details of the csr objects 
-# kubectl get csr kunal -o yaml         => Get details of csr key in yaml format 
-# kubectl certificate approve kunal     => Approve the pending csr request 
-# kubectl certificate deny kunal        => Deny the csr request 
-
-
 Creating CSR object 
 
 # vi  kunal-csr.yaml 
@@ -161,6 +154,12 @@ spec:
 
 # kubectl get csr akshay -o jsonpath='{.status.certificate}' \
   | base64 --decode > akshay.crt                                        => Create Certificate file from csr 
+
+
+# kubectl get csr                       => Get details of the csr objects 
+# kubectl get csr kunal -o yaml         => Get details of csr key in yaml format 
+# kubectl certificate approve kunal     => Approve the pending csr request 
+# kubectl certificate deny kunal        => Deny the csr request 
 
 ########## Etcd Backup and restore ##########
 
