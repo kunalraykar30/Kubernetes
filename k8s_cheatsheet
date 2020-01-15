@@ -129,9 +129,12 @@ Rolling Update in Deployment
 # echo aw34huty | base64 --decode       => Command base64 with decode will decode the string
 
 ########## Certificate Signing Request ##########
+# openssl genrsa -out kunal.key 4096                                => Generate the key for Kunal user
+# openssl req -new -key /root/kunal.key -out /root/kunal.csr        => Generate CSR for kunal.key 
+
 
 # kubectl get csr                       => Get details of the csr objects 
-# kubectl get csr kunal -o yaml 
+# kubectl get csr kunal -o yaml         => Get details of csr key in yaml format 
 # kubectl certificate approve kunal     => Approve the pending csr request 
 # kubectl certificate deny kunal        => Deny the csr request 
 
