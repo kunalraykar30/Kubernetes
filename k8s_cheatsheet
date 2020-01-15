@@ -128,6 +128,37 @@ Rolling Update in Deployment
 # echo NAME | base64                    => Command base64 will encode string 
 # echo aw34huty | base64 --decode       => Command base64 with decode will decode the string
 
+########## Certificate Signing Request ##########
+
+# kubectl get csr                       => Get details of the csr objects 
+# kubectl get csr kunal -o yaml 
+# kubectl certificate approve kunal     => Approve the pending csr request 
+# kubectl certificate deny kunal        => Deny the csr request 
+
+
+Creating CSR object 
+
+# vi  kunal-csr.yaml 
+apiVersion: certificates.k8s.io/v1beta1
+kind: CertificateSigningRequest
+metadata:
+  name: kunal
+spec:
+  groups:
+  - system:authenticated
+  request: ${BASE64_CSR}
+  usages:
+  - digital signature
+  - key encipherment
+  - server auth
+  - client auth
+
+# export BASE64_CSR=$(cat ./kunal.csr | base64 | tr -d '\n')
+# cat kunal-csr.yaml | envsubst | kubectl apply -f -
+
+# kubectl get csr akshay -o jsonpath='{.status.certificate}' \
+  | base64 --decode > akshay.crt                                        => Create Certificate file from csr 
+
 ########## Etcd Backup and restore ##########
 
 Backup and Restore procedure of etcd database 
