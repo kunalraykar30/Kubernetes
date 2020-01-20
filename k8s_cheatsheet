@@ -152,8 +152,11 @@ spec:
 # export BASE64_CSR=$(cat ./kunal.csr | base64 | tr -d '\n')
 # cat kunal-csr.yaml | envsubst | kubectl apply -f -
 
-# kubectl get csr akshay -o jsonpath='{.status.certificate}' \
-  | base64 --decode > akshay.crt                                        => Create Certificate file from csr 
+# kubectl get csr kunal -o jsonpath='{.status.certificate}' \
+  | base64 --decode > kunal.crt                                        => Create Certificate file from csr 
+
+# openssl x509 -in /root/kunal.crt -noout -text                        => Check the Certificate details
+# openssl x509 -in /etc/kubernetes/pki/server.crt                      => Check details of the Apiserver certificate 
 
 
 # kubectl get csr                       => Get details of the csr objects 
