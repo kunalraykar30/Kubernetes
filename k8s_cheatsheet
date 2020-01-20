@@ -158,7 +158,6 @@ spec:
 # openssl x509 -in /root/kunal.crt -noout -text                        => Check the Certificate details
 # openssl x509 -in /etc/kubernetes/pki/server.crt                      => Check details of the Apiserver certificate 
 
-
 # kubectl get csr                       => Get details of the csr objects 
 # kubectl get csr kunal -o yaml         => Get details of csr key in yaml format 
 # kubectl certificate approve kunal     => Approve the pending csr request 
