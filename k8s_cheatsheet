@@ -38,7 +38,9 @@
 # kubectl create -f mypod.yaml 
 # kubectl describe pod mypod
 
-# kubectl exec -it mypod -- /bin/bash            => Login into container using shell
+# kubectl exec -it mypod -- /bin/bash                   => Login into container using shell
+# kubectl exec mypod ps -ef                             => Run command in contianer without interactive shell 
+# kubectl exec -it mypod --container sidecar -- /bin/bash     => Login into sidecar container using whell 
 
 # kubectl get pod my-pod -o yaml                                    => Get a pod's YAML
 # kubectl get pod etcd-master -o yaml -n kube-system                => Generate yaml output of etcd-master pod of kube-system ns
