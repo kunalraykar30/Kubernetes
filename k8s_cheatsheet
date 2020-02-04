@@ -30,10 +30,11 @@
 # kubectl logs --tail=20 nginx-pod 
 
 ########## Pods Commands ##########
-# kubectl get pods 
-# kubectl get pods -o wide
-# kubectl get pods -n mynamespace 
-# kubectl get pods --all-namespaces
+# kubectl get po
+# kubectl get po -o wide
+# kubectl get po -n mynamespace 
+# kubectl get po --all-namespaces
+# kubectl get po --show-labels
 
 # kubectl create -f mypod.yaml 
 # kubectl describe pod mypod
