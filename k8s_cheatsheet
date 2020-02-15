@@ -92,6 +92,7 @@ Rolling Update in Deployment
 # kubectl rollout status deploy nginx-deploy 		  => Check the status of deployment. Changes that were performed 
 # kubectl rollout pause deploy nginx-deploy 		  => Pause the deployment in between in onging process
 # kubectl rollout resume deploy nginx-deploy 		  => Resume the deployment that was paused
+# kubectl rollout history deploy nginx-deploy     => Shows the history of the deployment 
 
 # kubectl rollout undo deploy nginx-deploy 			  => Undo the deployment 
 
