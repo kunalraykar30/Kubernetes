@@ -169,6 +169,24 @@ spec:
 # kubectl certificate approve kunal     => Approve the pending csr request 
 # kubectl certificate deny kunal        => Deny the csr request 
 
+########## Role and RoleBinding ##########
+
+# kubectl get roles 
+# kubectl get roles --all-namespaces 
+# kubectl describe role weave-net -n kube-system 
+# kubectl create role dev-user --verb=list,get,create --resource=pods,configmaps -n mynamespace
+# kubectl delete role dev-user -n mynamespace
+
+
+# kubectl get rolebindings
+# kubectl get rolebindings --all-namespaces
+# kubectl describe rolebinding -n kube-system weave-net 
+# kubectl create rolebinding dev-user-binding --role=developer --user=dev-user -n mynamespace
+# kubectl delete rolebindings dev-userbinding -n mynamespace
+
+# kubectl auth can-i get pods --as dev-user
+# kubectl get pods --as dev-user -n mynamespace
+
 ########## Etcd Backup and restore ##########
 
 Backup and Restore procedure of etcd database 
