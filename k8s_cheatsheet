@@ -81,8 +81,8 @@
 # kubectl create deploy mydeploy --image=nginx                      => Creating deployment using command line 
 # Kubectl create deploy mydeploy --image=nginx --dry-run -o yaml    => Running dry-run of deploy and get yaml output on screen
 
-# kubectl scale --replicas=5 deploy/mynginx-deploy      => Scale up Replicas in Deployment 
-# kubectl scale --replicas=2 deploy/mynginx-deploy      => Scale down Replicas in Deployment 
+# kubectl scale --replicas=5 deploy/mynginx-deploy --record      => Scale up Replicas in Deployment 
+# kubectl scale --replicas=2 deploy/mynginx-deploy --record     => Scale down Replicas in Deployment 
 
 # kubectl delete deploy/mynginx-deploy                  => Delte Deployment and all rs and pods of the deployment 
 
@@ -92,6 +92,7 @@ Rolling Update in Deployment
 # kubectl rollout status deploy nginx-deploy 		  => Check the status of deployment. Changes that were performed 
 # kubectl rollout pause deploy nginx-deploy 		  => Pause the deployment in between in onging process
 # kubectl rollout resume deploy nginx-deploy 		  => Resume the deployment that was paused
+# kubectl set image deploy nginx-deploy nginx=nginx:1.17 --record     => Increase the version of the deployment 
 # kubectl rollout history deploy nginx-deploy     => Shows the history of the deployment 
 
 # kubectl rollout undo deploy nginx-deploy 			  => Undo the deployment 
