@@ -170,6 +170,7 @@ spec:
 # kubectl certificate deny kunal        => Deny the csr request 
 
 ########## Role and RoleBinding ##########
+Roles in the K8s cluster 
 
 # kubectl get roles 
 # kubectl get roles --all-namespaces 
@@ -177,6 +178,7 @@ spec:
 # kubectl create role dev-user --verb=list,get,create --resource=pods,configmaps -n mynamespace
 # kubectl delete role dev-user -n mynamespace
 
+RoleBindings in the K8s cluster
 
 # kubectl get rolebindings
 # kubectl get rolebindings --all-namespaces
@@ -186,6 +188,25 @@ spec:
 
 # kubectl auth can-i get pods --as dev-user
 # kubectl get pods --as dev-user -n mynamespace
+
+########## Cluster Roles and Cluster Role bindings ##########
+ServiceAccount in the Cluster 
+# kubectl get serviceaccount
+# kubectl create serviceaccount pod-reader 
+# kubectl describe serviceaccount pod-reader 
+# kubectl delete serviceaccount pod-reader 
+
+Cluster Roles in the K8s Cluster
+# kubectl get clusterrole 
+# kubectl create clusterrole pod-reader-role --resource=pods,persistentvolume --verb=list 
+# kubectl describe clusterrole pod-reader-role 
+# kubectl delete clusterrole pod-reader-role 
+
+Clusterrolebindings in the K8s Cluster
+# kubectl create clusterrolebinding pod-reader-binding --clusterrole=pod-reader-role --serviceaccount=default:pod-reader
+# kubectl get clsuterrolebinding 
+# kubectl describe clusterrolebinding pod-reader-binding 
+# kubectl delete clusterrolebinding pod-reader-binding
 
 ########## Etcd Backup and restore ##########
 
