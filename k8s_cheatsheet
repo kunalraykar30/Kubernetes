@@ -20,6 +20,11 @@
 
 ########## Monitoring and Logging Commands ##########
 
+Install the metric server 
+
+# git clone https://github.com/kodekloudhub/kubernetes-metrics-server.git
+# kubectl create -f .         => Commad fired under the server clonned repository
+
 # kubectl top nodes
 # kubectl top pods 
 # Kubectl top pods --all-namespaces 
