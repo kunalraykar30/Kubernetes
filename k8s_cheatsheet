@@ -28,7 +28,7 @@ Install the metric server
 # kubectl top nodes
 # kubectl top pods 
 # kubectl top pods --sort-by=cpu                  => Sort Pods with CPU usage
-# kubectl top pods --sort-by=mem                  => Sort Pods with Mem Usage
+# kubectl top pods --sort-by=memory               => Sort Pods with Mem Usage
 # Kubectl top pods --all-namespaces 
 
 # kubectl logs nginx-pod
