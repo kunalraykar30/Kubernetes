@@ -122,6 +122,7 @@ Rolling Update in Deployment
 # kubectl create -f mysvc.yaml 
 # kubectl describe mysvc 
 # kubectl expose deploy mydeploy --port=3300 --target-port=3300 --name=mysvc -o yaml    => Creates svc using command line for deploy and get yaml output
+# kubectl expose deploy mydeploy --port=8080 --type=NodePort --name=mysvc --dry-run -o yaml => Create NodePort service 
 
 ########## Configmap Commands ##########
 # kubectl get configmap 
