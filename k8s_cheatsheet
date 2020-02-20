@@ -43,6 +43,8 @@ Install the metric server
 # kubectl get po --all-namespaces
 # kubectl get po --show-labels
 
+# kubectl get pods --selector tier=fronend 
+
 # kubectl create -f mypod.yaml 
 # kubectl describe pod mypod
 
