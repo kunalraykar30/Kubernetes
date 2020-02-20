@@ -56,6 +56,7 @@ Install the metric server
 # kubectl run --generator=run-pod/v1 mypod --image=redis                            => Create pod from command line without yaml file
 # kubectl run --generator=run-pod/v1 mypod100 --image=nginx --port=2379 --dry-run   => Dry-run of pod creation with specfic spec
 # kubectl run --generator=run-pod/v1 mypod200 --image=nginx --namespace=mydev       => Run pod in specific namespace
+# kubectl run --generator=run-pod/v1 --image=redis:alpine redis-pod --labels=env=prod,tier=frontend   => Create pod with labels
 
 # kubectl delete pod/mypod                            => Delte pods of mypods 
 # kubectl delete pods -l name=my-app                  => Delete pods where label - name=my-app
