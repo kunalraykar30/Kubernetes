@@ -1,5 +1,11 @@
 # Kubernetes Cheat Sheet - By Kunal Raykar
 
+########## Basic K8s Commands ##########
+# kubectl version 
+# kubectl version --short 
+# kubectl get componentstatuses           => Shows the status of K8s core components
+# kubectl cluster-info                    => Shows the information of the K8s Cluster
+
 ########## Nodes Commands ##########
 # kubectl get nodes 
 # kubectl get no -o wide 
