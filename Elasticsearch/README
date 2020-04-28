@@ -1,7 +1,0 @@
-2 different scripts are written. First script - kunal_deploy_elasticsearch.sh will install all necessay pkgs and then download the
-docker-compose file from this repo.
-Testing Script name - kunal_test_elasticsearch.sh should be executed after the first so you can check if the container is up and running.
-Deploy Script will update system/install docker/pull docker-compose from github/start the container.
-
-NOTE: This is purely elastic container and not the ELK or EFK stack. 
- 
