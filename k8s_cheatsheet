@@ -54,8 +54,8 @@ Install the metric server
 # kubectl create -f mypod.yaml 
 # kubectl describe pod mypod
 
-# kubectl exec -it mypod -- /bin/bash                   => Login into container using shell
-# kubectl exec mypod ps -ef                             => Run command in contianer without interactive shell 
+# kubectl exec -it mypod -- /bin/bash                         => Login into container using shell
+# kubectl exec mypod ps -ef                                   => Run command in contianer without interactive shell 
 # kubectl exec -it mypod --container sidecar -- /bin/bash     => Login into sidecar container using whell 
 
 # kubectl get pod my-pod -o yaml                                    => Get a pod's YAML
@@ -104,13 +104,13 @@ Install the metric server
 
 Rolling Update in Deployment 
 
-# kubectl create -f nginx-deploy.yaml --record 		=> Record options records the commands fired as part of rollout procedure
-# kubectl edit deploy nginx-deploy 					      => Edit the deployment and make changes 
-# kubectl rollout status deploy nginx-deploy 		  => Check the status of deployment. Changes that were performed 
-# kubectl rollout pause deploy nginx-deploy 		  => Pause the deployment in between in onging process
-# kubectl rollout resume deploy nginx-deploy 		  => Resume the deployment that was paused
+# kubectl create -f nginx-deploy.yaml --record 		          => Record options records the commands fired as part of rollout procedure
+# kubectl edit deploy nginx-deploy 					                => Edit the deployment and make changes 
+# kubectl rollout status deploy nginx-deploy 		            => Check the status of deployment. Changes that were performed 
+# kubectl rollout pause deploy nginx-deploy 		            => Pause the deployment in between in onging process
+# kubectl rollout resume deploy nginx-deploy 		            => Resume the deployment that was paused
 # kubectl set image deploy nginx-deploy nginx=nginx:1.17 --record     => Increase the version of the deployment 
-# kubectl rollout history deploy nginx-deploy     => Shows the history of the deployment 
+# kubectl rollout history deploy nginx-deploy                => Shows the history of the deployment 
 
 # kubectl rollout undo deploy nginx-deploy 			  => Undo the deployment 
 
@@ -130,8 +130,8 @@ Rolling Update in Deployment
 
 # kubectl create -f mysvc.yaml 
 # kubectl describe mysvc 
-# kubectl expose deploy mydeploy --port=3300 --target-port=3300 --name=mysvc -o yaml    => Creates svc using command line for deploy and get yaml output
-# kubectl expose deploy mydeploy --port=8080 --type=NodePort --name=mysvc --dry-run -o yaml => Create NodePort service 
+# kubectl expose deploy mydeploy --port=3300 --target-port=3300 --name=mysvc -o yaml          => Creates svc using command line for deploy and get yaml output
+# kubectl expose deploy mydeploy --port=8080 --type=NodePort --name=mysvc --dry-run -o yaml   => Create NodePort service 
 
 ########## Configmap Commands ##########
 # kubectl get configmap 
