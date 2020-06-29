@@ -37,8 +37,8 @@ Install the metric server
 # kubectl top pods --sort-by=memory               => Sort Pods with Mem Usage
 # Kubectl top pods --all-namespaces 
 
-# kubectl logs nginx-pod
-# kubectl logs nginx-pod -c nginx-container       => Provide -c option when pod contain more than one container
+# kubectl logs nginx-pod -n nginx-ns                          => Pod is running in nginx-ns namespace
+# kubectl logs nginx-pod -c nginx-container  -n ningx-ns      => Provide -c option when pod contain more than one container
 # kubectl logs --since=1h nginx-pod 
 # kubectl logs --tail=20 nginx-pod 
 
