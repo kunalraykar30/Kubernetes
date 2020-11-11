@@ -42,6 +42,8 @@ Install the metric server
 # kubectl logs --since=1h nginx-pod 
 # kubectl logs --tail=20 nginx-pod 
 
+# kubectl --v=8 logs nginx-pod -n nginx-ns         => Check log in verbose
+
 ########## Pods Commands ##########
 # kubectl get po
 # kubectl get po -o wide
